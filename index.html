@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Solar system</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+  		}
+  		.stars {
+  			background: #000 url(stars.png) repeat top center;
+  			width: 100%;
+  			height: 100%;
+  			position: absolute;
+  			z-index: -2;
+  		}
+  		.twinkling {
+  			background: transparent url("twinkling.png") repeat top center;
+  			width: 100%;
+  			height: 100%;
+  			position: absolute;
+  			z-index: -1;
+  			animation: move-stars 200s linear infinite;
+  			}
+  		@keyframes move-stars {
+  			0% {background-position: 0 0;}
+  			100% {background-position: -10000px 5000px}
+  		}
+  		.system {
+  			width: 700px;
+  			display: flex;
+  			align-items: center;
+  			justify-content: center;
+  		}
+  		.orbita {
+  			position: absolute;
+  			display: flex;
+  			align-items: center;
+  			justify-content: center;
+  			border: 1px white solid;
+  			border-radius: 100%;
+  		}
+  		.earth {
+  			height: 500px;
+  			width: 500px;
+  			animation: spin 8s linear infinite;
+  		}
+  		.earth-img {
+  			position: absolute;
+  			transform: translateY(-50%);
+  			top: 50%;
+  			left: -12px;
+  		}
+  		@keyframes spin {
+  			from {
+  			}
+  			to {
+  				transform: rotate(360deg);
+  			}
+  		}
+	</style>
+</head>
+<body>
+	<div class="stars"></div>
+	<div class="twinkling"></div>
+	<div class="system">
+		<div class="sun">
+			<img src="sun.png" alt="">
+		</div>
+		<div class="orbita earth">
+		<img src="earth.png" alt="" class="earth-img">
+		</div>
+	</div>
+</body>
+</html>
